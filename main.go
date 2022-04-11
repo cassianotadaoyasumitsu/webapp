@@ -5,11 +5,13 @@ import (
 	"log"
 	"net/http"
 	"webapp/src/router"
+	"webapp/src/utils"
 )
 
 func main() {
-	fmt.Println("Running on port 5002")
-
+	fmt.Println("Running WebApp")
 	r := router.Gerar()
-	log.Fatal(http.ListenAndServe(":5002", r))
+
+	utils.CarregarTemplates()
+	log.Fatal(http.ListenAndServe(":3000", r))
 }
